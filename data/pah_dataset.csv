@@ -1,0 +1,28 @@
+name,pubchem_cid,smiles,n_pi,K,Aut,K_over_Aut,PEF,log10_PEF,bay_fjord,methylated,PEF_source,classification_5_0
+Benzene,241,c1ccccc1,6,2,12,0.17,0.001,-3.00,N,N,Tier4 assigned,TN
+Naphthalene,931,c1cccc2ccccc12,10,3,4,0.75,0.001,-3.00,N,N,N&L 1992,TN
+Acenaphthylene,9161,C1=CC2=CC=CC3=CC=CC1=C23,12,3,2,1.50,0.001,-3.00,N,N,N&L 1992,TN
+Fluoranthene,9152,c1ccc2c(c1)-c1cccc3cccc2c13,16,6,2,3.00,0.001,-3.00,N,N,N&L 1992,TN
+Anthracene,8418,c1ccc2cc3ccccc3cc2c1,14,4,4,1.00,0.010,-2.00,N,N,N&L 1992,TN
+Phenanthrene,995,c1ccc2c(c1)ccc1ccccc12,14,5,2,2.50,0.001,-3.00,Y,N,N&L 1992,TN
+Pyrene,31423,c1cc2ccc3cccc4ccc(c1)c2c34,16,6,4,1.50,0.001,-3.00,N,N,N&L 1992,TN
+Triphenylene,10703,c1ccc2c(c1)c1ccccc1c1ccccc21,18,9,6,1.50,0.001,-3.00,N,N,Tier4 assigned,TN
+Chrysene,11714,c1ccc2c(c1)ccc1ccc3ccccc3c12,18,8,2,4.00,0.010,-2.00,Y,N,N&L 1992,TN
+Benz[a]anthracene,5954,c1ccc2c(c1)cc1ccc3ccccc3c1c2,18,7,1,7.00,0.100,-1.00,Y,N,N&L 1992,TP
+Benzo[c]phenanthrene,9136,C1=CC=C2C(=C1)C=CC3=C2C4=CC=CC=C4C=C3,18,8,2,4.00,0.023,-1.64,Y,N,Durant 1996 MEF proxy,TN
+Benzo[a]pyrene,2336,c1ccc2c(c1)cc1ccc3cccc4ccc2c1c34,20,9,1,9.00,1.000,0.00,Y,N,N&L 1992 ref,TP
+3-Methylcholanthrene,11367,Cc1cc2c3ccccc3-c3cccc4cccc-2c1c34,20,7,1,7.00,1.833,0.26,Y,Y,OEHHA 2011 CSF/BaP,TP
+5-Methylchrysene,19427,Cc1cc2ccccc2c2ccc3ccccc3c12,18,8,2,4.00,1.000,0.00,Y,Y,OEHHA 2011 CSF/BaP,FN
+DMBA,6001,CC1=C2C=CC3=CC=CC=C3C2=C(C4=CC=CC=C14)C,18,7,1,7.00,20.830,1.32,Y,Y,OEHHA 2011 CSF/BaP,TP
+Dibenz[a;h]anthracene,5921,c1ccc2c(c1)cc1ccc3cc4ccccc4cc3c1c2,22,10,2,5.00,5.000,0.70,Y,N,N&L 1992,TP
+Dibenzo[a;l]pyrene,9119,C1=CC=C2C(=C1)C=C3C=CC4=C5C3=C2C6=CC=CC=C6C5=CC=C4,24,16,1,16.00,10.000,1.00,Y,N,Collins 1998,TP
+Benzo[b]fluoranthene,9153,c1ccc2c(c1)-c1cccc3c1c-2cc1ccccc13,20,10,1,10.00,0.100,-1.00,Y,N,N&L 1992,TP
+Benzo[k]fluoranthene,9158,c1ccc2cc3c(cc2c1)-c1cccc2cccc-3c12,20,9,2,4.50,0.100,-1.00,Y,N,N&L 1992,FN
+Perylene,9142,c1cc2cccc3c4cccc5cccc(c(c1)c23)c54,20,9,4,2.25,0.001,-3.00,N,N,Tier4 assigned,TN
+Benzo[ghi]perylene,9117,c1cc2ccc3ccc4ccc5cccc6c(c1)c2c3c4c56,22,14,2,7.00,0.010,-2.00,N,N,N&L 1992,FP
+Coronene,13097,c1cc2ccc3ccc4ccc5ccc6ccc1c7c2c3c4c5c67,24,20,12,1.67,0.001,-3.00,N,N,Tier4 assigned,TN
+Indeno[1;2;3-cd]pyrene,9131,c1ccc2c(c1)-c1ccc3ccc4cccc5cc-2c1c3c45,22,12,1,12.00,0.100,-1.00,Y,N,N&L 1992,TP
+Dibenzo[a;e]pyrene,9126,c1ccc2c(c1)cc1c3ccccc3c3cccc4ccc2c1c43,24,17,1,17.00,1.000,0.00,Y,N,Collins 1998,TP
+Dibenzo[a;h]pyrene,9108,C1=CC=C2C3=C4C(=CC2=C1)C=CC5=C4C(=CC6=CC=CC=C56)C=C3,24,13,2,6.50,10.000,1.00,Y,N,Collins 1998,TP
+Dibenzo[a;i]pyrene,9106,C1=CC=C2C3=C4C(=CC2=C1)C=CC5=CC6=CC=CC=C6C(=C54)C=C3,24,14,2,7.00,10.000,1.00,Y,N,Collins 1998,TP
+Benzo[e]pyrene,9128,C1=CC=C2C(=C1)C3=CC=CC4=C3C5=C(C=CC=C25)C=C4,20,11,2,5.50,0.001,-3.00,N,N,Tier4 assigned,FP
