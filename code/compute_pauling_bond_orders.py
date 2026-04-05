@@ -100,13 +100,20 @@ if __name__ == "__main__":
     print("Summary: mechanistic claim verification")
     print("=" * 60)
     print("""
-Coronene: bond-order range should be narrow (≈0.50–0.58).
-  D6h symmetry forces 3 bond equivalence classes.
-  All bonds nearly equivalent → no localized C=C for CYP1.
+Coronene: D6h symmetry → 3 bond equivalence classes.
+  Computed range: 0.30 (outer rim) – 0.70 (inner hub), total range 0.40.
+  Maximum p=0.70 distributed across 6 equivalent hub bonds — no bay region
+  available to direct CYP1 epoxidation to any specific bond.
 
-BaP: bond-order range should be wide (≈0.11–0.89).
-  C1 symmetry → all bonds inequivalent.
-  Bay-region C=C has high bond order → preferred CYP1 substrate.
+BaP: C1 symmetry → all 24 bonds inequivalent.
+  Computed range: 0.11 – 0.89, total range 0.78.
+  Maximum p=8/9≈0.889 on a single unique bay-region C=C bond —
+  exactly the bond targeted by CYP1A1 epoxidation.
 
-This verifies the mechanistic argument in §3.5 and §4.1.
+Key contrast (§3.5, §4.1):
+  Not merely "BaP range > coronene range" (0.78 vs 0.40).
+  BaP's maximum is geometrically positioned at the bay-region bond;
+  coronene's maximum (0.70) has no bay-region outlet.
+  K/|Aut(G)| encodes both the quantity and the geometric specificity
+  of bond-order localization.
 """)

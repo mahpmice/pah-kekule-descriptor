@@ -100,8 +100,8 @@ def annotate_selected(ax, xs, ys, labels_offsets):
 
 
 def save(fig: plt.Figure, stem: str):
-    fig.savefig(ROOT / f"{stem}.png", bbox_inches="tight")
-    fig.savefig(ROOT / f"{stem}.pdf", bbox_inches="tight")
+    fig.savefig(FIG_OUT / f"{stem}.png", bbox_inches="tight")
+    fig.savefig(FIG_OUT / f"{stem}.pdf", bbox_inches="tight")
 
 
 def fig1_main_results():
