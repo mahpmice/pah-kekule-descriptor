@@ -278,7 +278,7 @@ The 27-PAH dataset (SMILES, PubChem CIDs, computed descriptors, and PEF values w
 
 ### Corresponding Author
 
-**Zhiwei Liu** — Independent Researcher; Email: mahpmiceliu@gmail.com; ORCID: [0009-0004-3926-0720](https://orcid.org/0009-0004-3926-0720)
+**Zhiwei Liu** — Independent Researcher; Email: mahpmiceliu@gmail.com; ORCID: https://orcid.org/0009-0004-3926-0720
 
 ### Notes
 

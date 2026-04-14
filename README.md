@@ -33,7 +33,7 @@ Full reproduction (audit + extended-predictor stress test + SI tables + figures 
 ## What's in the box
 
 - `code/` — eight canonical modules: `paper1_canonical_data.py` (27-PAH data SSOT), `compute_k_aut_v2.py` (K and |Aut|), `paper1_audit.py` (primary statistics), `paper1_extended_predictors.py` (N=17 Bonferroni×17), `paper1_methyl_sensitivity.py` (N=24 subset), `generate_paper1_si.py` (SI tables), `generate_paper1_figures.py` (figures), `build_paper1_pdf.py` (PDF build).
-- `data/paper1_table1.csv` — 27 PAHs × (name, CID, SMILES, K, |Aut|, K/|Aut|, bay, log₁₀PEF). Every value has a source tier in `paper1_JCIM/provenance_v6.md`.
+- `data/paper1_table1.csv` — 27 PAHs × (name, CID, SMILES, K, |Aut|, K/|Aut|, bay, log₁₀PEF). Every value has a source tier documented in `REPRODUCIBILITY.md` §5.
 - `paper1_JCIM/manuscript_Liu2026_PAH_Kekule.pdf` — the submitted manuscript.
 - `paper1_JCIM/extended_predictors_N17/` — post-hoc N=17 Bonferroni × 17 + BH q<0.05 stress test (17 predictors, including 10 graph-theoretic and 2 physicochemical comparators).
 

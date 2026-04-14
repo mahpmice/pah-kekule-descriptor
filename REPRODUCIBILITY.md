@@ -112,7 +112,6 @@ From `paper1_methyl_sensitivity.py` (N=24 methyl-excluded subset):
     ├── manuscript_Liu2026_PAH_Kekule.pdf   14-page main manuscript (includes Notes on patent)
     ├── manuscript_Liu2026_PAH_Kekule.md
     ├── supporting_information.pdf / .md
-    ├── provenance_v6.md                    Versioned audit trail of every number
     └── extended_predictors_N17/
         ├── paper1_extended_results.csv         17 × (predictor, ρ, raw p, Bonferroni p, BH q, survival flags)
         ├── paper1_extended_per_pah.csv         27 × (name, CID, log10PEF, 17 descriptor values)
@@ -127,7 +126,7 @@ From `paper1_methyl_sensitivity.py` (N=24 methyl-excluded subset):
 
 ## 5. Data provenance
 
-`data/paper1_table1.csv` is the canonical v4 (v6.1 after 2026-04-14 CID cleaning) dataset. Every value has a source tier documented in `paper1_JCIM/provenance_v6.md`:
+`data/paper1_table1.csv` is the canonical v4 (v6.1 after 2026-04-14 CID cleaning) dataset. Every value has a source tier assigned from the four-tier hierarchy below:
 
 - **Tier 1** — Nisbet & LaGoy 1992 PEFs for 14 of 16 EPA Priority PAHs (acenaphthene and fluorene excluded: sp³ carbon in the ring system).
 - **Tier 2** — Collins et al. 1998 for four dibenzopyrene isomers.
@@ -170,4 +169,4 @@ A tagged release at submission will be snapshotted to Zenodo for a citable DOI (
 
 ---
 
-*Every number in Paper 1 must trace back to this repository. If a scripted run disagrees with the manuscript, the run is right and the manuscript is wrong — please file an issue and cite the line of `paper1_JCIM/provenance_v6.md` that the failing number came from.*
+*Every number in Paper 1 must trace back to this repository. If a scripted run disagrees with the manuscript, the run is right and the manuscript is wrong — please file an issue citing the specific statistic name and expected value from the tables in §3.*

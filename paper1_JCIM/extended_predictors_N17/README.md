@@ -57,4 +57,4 @@ See `paper1_extended_log.txt` for the full ranked table and ranked diagnostic.
 
 ## Reference
 
-This audit is logged in `paper1_JCIM/provenance_v6.md` as version v6.1 → v6.2 extension.
+Full ranked output is in `paper1_extended_log.txt` and `paper1_extended_results.csv`; expected numerical values are cross-referenced in the top-level `REPRODUCIBILITY.md` §3.
