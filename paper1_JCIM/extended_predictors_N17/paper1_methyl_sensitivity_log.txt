@@ -1,0 +1,23 @@
+paper1_methyl_sensitivity — N=24 (methyl-excluded) sensitivity audit
+=====================================================================
+Excluded: 3-Methylcholanthrene, 5-Methylchrysene, DMBA
+Bonferroni factor: x17 (consistent with N=17 audit)
+
+predictor               N=27 ρ   N=27 Bonf p  N=27 AUC    N=24 ρ   N=24 Bonf p  N=24 AUC        Δρ
+--------------------------------------------------------------------------------------------------
+K                       +0.420     4.950e-01     0.713    +0.554     8.428e-02     0.847    +0.134
+|Aut|                   -0.688     1.255e-03     0.219    -0.677     4.725e-03     0.236    +0.010
+K/|Aut|                 +0.745     1.424e-04     0.833    +0.775     1.463e-04     0.870    +0.031
+Bay                     +0.802     8.214e-06     0.806    +0.806     3.378e-05     0.806    +0.004
+K/|Aut| x Bay           +0.834     1.136e-06     0.873    +0.868     6.816e-07     0.903    +0.034
+
+Interpretation (K/|Aut| as reference predictor)
+-------------------------------------------------
+N=27 Spearman ρ = +0.745
+N=24 Spearman ρ = +0.775
+Δρ (N=24 − N=27) = +0.031
+
+|Δρ| ≤ 0.05: the K/|Aut| correlation is robust to methyl PAH inclusion/exclusion. §4.3 can cite this sensitivity as evidence that the π-graph abstraction is not carried by the three methylated outliers.
+
+Reviewer-safe reporting template (§3.3 insertion):
+"Excluding the three methylated PAHs (DMBA, 3-methylcholanthrene, 5-methylchrysene), the N=24 subset yields Spearman ρ = +0.775 for K/|Aut(G)| (Bonferroni p × 17 = 1.463e-04, AUC at PEF ≥ 1 = 0.87). Δρ = +0.031 relative to the full 27-PAH dataset."

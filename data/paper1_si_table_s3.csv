@@ -1,0 +1,7 @@
+Analysis,rho,p,Notes
+Floor=0.01,+0.722,2.14e-05,PEF floor sensitivity
+Floor=0.001,+0.745,8.38e-06,PEF floor sensitivity
+Floor=0.0001,+0.745,8.38e-06,PEF floor sensitivity
+Set A: N&L only,+0.345,7.82e-02,AUC=0.79
+Set B: Main hierarchy,+0.745,8.38e-06,AUC=0.95
+Set C: BcP conservative,+0.734,1.30e-05,AUC=0.95

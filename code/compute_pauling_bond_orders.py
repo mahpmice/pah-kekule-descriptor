@@ -19,7 +19,7 @@ import networkx as nx
 
 # ── Load the SMILES parser and K-counter from compute_k_aut_v2 ──
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from compute_k_aut import parse_smiles_to_graph, count_perfect_matchings
+from compute_k_aut_v2 import parse_smiles_to_graph, count_perfect_matchings
 
 
 def pauling_bond_orders(G: nx.Graph) -> dict:

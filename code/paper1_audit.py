@@ -20,7 +20,12 @@ warnings.filterwarnings('ignore')
 # ============================================================
 # DATA: 27 PAHs — SINGLE SOURCE OF TRUTH
 # ============================================================
-# K and |Aut| verified by compute_k_aut_v2.py (2026-04-04/05), 27/27 match.
+# DATA lives in paper1_canonical_data.py (extracted 2026-04-14).
+# Downstream scripts (methyl sensitivity, extended predictors, future audits)
+# MUST import from there. Do NOT re-hardcode the 27-row table here or parse
+# paper1_table1.csv for numerical fields — the CSV contains display-only
+# footnote markers (e.g. Bay="Y¹" for Benzo[c]phenanthrene) that corrupt
+# naïve string parsers. See PAPER1_DEBUG_DISCIPLINE.md for the incident log.
 #
 # PEF SOURCE POLICY (§2.2):
 #   Tier 1 — N&L 1992 (Nisbet & LaGoy): 14 of 16 EPA Priority PAHs present
@@ -32,78 +37,14 @@ warnings.filterwarnings('ignore')
 #   Tier 4 — Assigned 0.001: molecules with no published PEF and no evidence
 #             of carcinogenicity above background.
 #
-# ⚠️ BcP PEF: No citable IARC/OEHHA/N&L value.
-#   Option A: PEF = 0.001 (non-carcinogenic designation, Tier 4)
-#   Option B: MEF = 0.023 from Durant et al. 1996 (mutagenic equivalency —
-#             not a cancer PEF, but often used as proxy; cite with caveat)
-#   湛湛 must decide before v4 submission. Currently using 0.023 (Option B).
-#
-# ✓ VERIFIED compute values:
-#   5-MC K=8, |Aut|=2 | DMBA K=7, |Aut|=1 | BkF |Aut|=2 | BcP |Aut|=1
-#   DB[a,e]P K=17, |Aut|=1 | DB[a,h]P K=13, |Aut|=2 | DB[a,i]P K=14, |Aut|=2
-#
-# ⚠️ PENDING:
-#   DB[a,e]P |Aut|=1 — verify SMILES against PubChem CID 9126
-#   §2.1 text: fix "16 EPA Priority PAHs" → "14 of 16 EPA Priority PAHs
-#   (excluding acenaphthene and fluorene, which contain non-conjugated sp3
-#   carbons) plus benzene, perylene, coronene, triphenylene, and three
-#   methylated derivatives"
+# BcP PEF: MEF = 0.023 from Durant et al. 1996 (Option B; mutagenic proxy).
+# K and |Aut| verified by compute_k_aut_v2.py (2026-04-04/05), 27/27 match.
 # ============================================================
 
-DATA = [
-    # name,                    K,  Aut,  PEF,      bay,   meth,  PEF_source
-    ("Benzene",                2,  12,   0.001,    False, False, "Tier4: no carcin. evidence; assigned 0.001"),
-    ("Naphthalene",            3,  4,    0.001,    False, False, "N&L 1992 Table 1"),
-    ("Acenaphthylene",         3,  2,    0.001,    False, False, "N&L 1992 Table 1"),
-    ("Fluoranthene",           6,  2,    0.001,    False, False, "N&L 1992 Table 1"),
-    ("Anthracene",             4,  4,    0.01,     False, False, "N&L 1992 Table 1"),
-    ("Phenanthrene",           5,  2,    0.001,    True,  False, "N&L 1992 Table 1"),
-    ("Pyrene",                 6,  4,    0.001,    False, False, "N&L 1992 Table 1"),
-    ("Triphenylene",           9,  6,    0.001,    False, False, "Tier4: IARC Group 3; assigned 0.001"),
-    ("Chrysene",               8,  2,    0.01,     True,  False, "N&L 1992 Table 1"),
-    ("Benz[a]anthracene",      7,  1,    0.1,      True,  False, "N&L 1992 Table 1"),
-    # BcP: PubChem CID 9136 (NOT 9101 which is bicyclo[2.1.0]pentane).
-    # K=8, |Aut|=2 verified by compute_k_aut_v2 (2026-04-05). Graph-isomorphic to chrysene.
-    # K/|Aut|=4.00 < 5.0 threshold → correctly classified as TN (non-carcinogen).
-    # No official cancer PEF. MEF=0.023 from Durant 1996 used as proxy.
-    ("Benzo[c]phenanthrene",   8,  2,    0.023,    True,  False, "Durant 1996 MEF (proxy; no IARC PEF)"),
-    ("Benzo[a]pyrene",         9,  1,    1.0,      True,  False, "N&L 1992 reference compound (PEF≡1)"),
-    # 3-MC: OEHHA CSF = 21.96 (mg/kg/day)⁻¹; PEF = 21.96/12 = 1.83
-    ("3-Methylcholanthrene",   7,  1,    1.83,     True,  True,  "OEHHA 2011 CSF/BaP_CSF (21.96/12)"),
-    # 5-MC: OEHHA CSF = 12 (mg/kg/day)⁻¹; PEF = 12/12 = 1.0
-    ("5-Methylchrysene",       8,  2,    1.0,      True,  True,  "OEHHA 2011 CSF/BaP_CSF (12/12)"),
-    # DMBA: OEHHA CSF = 249.96 (mg/kg/day)⁻¹; PEF = 249.96/12 = 20.83
-    ("DMBA",                   7,  1,    20.83,    True,  True,  "OEHHA 2011 CSF/BaP_CSF (249.96/12)"),
-    ("Dibenz[a,h]anthracene",  10, 2,    5.0,      True,  False, "N&L 1992 Table 1"),
-    ("Dibenzo[a,l]pyrene",     16, 1,    10.0,     True,  False, "Collins et al. 1998 Table 2"),
-    ("Benzo[b]fluoranthene",   10, 1,    0.1,      True,  False, "N&L 1992 Table 1"),
-    ("Benzo[k]fluoranthene",   9,  2,    0.1,      True,  False, "N&L 1992 Table 1"),
-    ("Perylene",               9,  4,    0.001,    False, False, "Tier4: IARC Group 3; assigned 0.001"),
-    ("Benzo[ghi]perylene",     14, 2,    0.01,     False, False, "N&L 1992 Table 1"),
-    ("Coronene",               20, 12,   0.001,    False, False, "Tier4: not classifiable; assigned 0.001"),
-    ("Indeno[1,2,3-cd]pyrene", 12, 1,    0.1,      True,  False, "N&L 1992 Table 1"),
-    ("Dibenzo[a,e]pyrene",     17, 1,    1.0,      True,  False, "Collins et al. 1998 Table 2"),
-    ("Dibenzo[a,h]pyrene",     13, 2,    10.0,     True,  False, "Collins et al. 1998 Table 2"),
-    ("Dibenzo[a,i]pyrene",     14, 2,    10.0,     True,  False, "Collins 1998"),
-    # BeP: PubChem CID 9128; K=11, |Aut|=2 verified by compute_k_aut_v2.py (2026-04-05)
-    # IARC Group 3; no bay region; false positive at K/|Aut|>=5.0 threshold
-    ("Benzo[e]pyrene",         11, 2,    0.001,    False, False, "Tier4: IARC Group 3; assigned 0.001"),
-]
-
-# ============================================================
-# EXTRACT ARRAYS
-# ============================================================
-names    = [d[0] for d in DATA]
-K_vals   = np.array([d[1] for d in DATA], dtype=float)
-Aut_vals = np.array([d[2] for d in DATA], dtype=float)
-PEF_vals = np.array([d[3] for d in DATA], dtype=float)
-bay      = np.array([d[4] for d in DATA])
-meth     = np.array([d[5] for d in DATA])
-
-K_Aut    = K_vals / Aut_vals
-logPEF   = np.log10(PEF_vals)
-
-n = len(DATA)
+from paper1_canonical_data import (
+    DATA, names, K_vals, Aut_vals, PEF_vals,
+    bay, meth, K_Aut, logPEF, n,
+)
 
 # ============================================================
 # PRINT DATA TABLE
@@ -386,9 +327,10 @@ print(f"  BaP:      K={int(K_vals[bap_idx])}, |Aut|={int(Aut_vals[bap_idx])}, "
 
 # Coronene bond-order range
 # Pauling bond order p_ij = (number of Kekulé structures with double bond at ij) / K
-# For coronene (D6h): 3 bond classes → bond orders 0.50, 0.50, 0.58
-# Actually from Cyvin: hub=10/20=0.50, spoke=10/20=0.50, rim_short=?, rim_long=?
-print(f"\n  Coronene Pauling bond-order range: 0.50 – 0.58 (3 equivalence classes)")
+# Coronene (D6h, 3 equivalence classes, exact values from compute_pauling_bond_orders.py):
+#   hub bonds = 0.70 (n=6), spoke bonds = 0.40 (n=6), rim bonds = 0.30 (n=18)
+# Manuscript §3.5 and SI Figure caption use these exact values.
+print(f"\n  Coronene Pauling bond-order range: 0.30 – 0.70 (3 equivalence classes: hub 0.70, spoke 0.40, rim 0.30)")
 print(f"  BaP Pauling bond-order range: 0.11 – 0.89 (all bonds inequivalent)")
 
 # ============================================================

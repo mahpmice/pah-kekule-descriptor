@@ -1,0 +1,6 @@
+Name,CID,PubChem_title,Canonical_SMILES,n_pi,K,Aut,K_over_Aut,Verification_note
+5-Methylchrysene,19427,5-Methylchrysene,Cc1cc2ccccc2c2ccc3ccccc3c12,18,8,2,4.00,"PubChem 2D record reproduces n_pi=18, K=8, |Aut|=2."
+DMBA,6001,"7,12-Dimethylbenz(a)anthracene",Cc1c2ccccc2c(C)c2c1ccc1ccccc12,18,7,1,7.00,"PubChem 2D record reproduces n_pi=18, K=7, |Aut|=1."
+Benzo[k]fluoranthene,9158,Benzo[k]fluoranthene,c1ccc2cc3c(cc2c1)-c1cccc2cccc-3c12,20,9,2,4.50,pynauty cross-check reproduces |Aut|=2.
+"Dibenzo[a,e]pyrene",9126,"DIBENZO(a,e)PYRENE",c1ccc2c(c1)cc1c3ccccc3c3cccc4ccc2c1c43,24,17,1,17.00,"PubChem correction: CID 9126, not 5765; reproduces K=17, |Aut|=1."
+"Dibenzo[e,l]pyrene",9122,"Dibenzo(e,l)pyrene",c1ccc2c(c1)c1cccc3c4ccccc4c4cccc2c4c13,24,20,4,5.00,"PubChem qualitative isomer outside main dataset; gives n_pi=24, K=20, |Aut|=4, K/|Aut|=5.0."

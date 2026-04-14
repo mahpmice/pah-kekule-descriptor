@@ -1,6 +1,24 @@
+# ------------------------------------------------------------------
+# pah-kekule-descriptor — minimal Python dependencies for reproducibility
+# ------------------------------------------------------------------
+# Install:
+#   python3 -m pip install -r requirements.txt
+#
+# Scripts that use ONLY this dependency set:
+#   - code/compute_k_aut_v2.py           (K + |Aut| on pi-graphs)
+#   - code/paper1_audit.py               (primary statistical audit)
+#   - code/paper1_extended_predictors.py (N=17 extended predictor sweep)
+#   - code/paper1_methyl_sensitivity.py  (N=24 methyl-excluded sensitivity, §3.3)
+#   - code/generate_paper1_si.py         (SI tables)
+#   - code/generate_paper1_figures.py    (manuscript figures; needs matplotlib)
+#   - code/build_paper1_pdf.py           (manuscript PDF build; needs reportlab)
+# ------------------------------------------------------------------
+
 networkx>=3.0
-scipy>=1.9
-numpy>=1.23
-scikit-learn>=1.1
-matplotlib>=3.6
-rdkit>=2022.09
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+
+# Only needed for figures and PDF build (comment out if you only want stats):
+matplotlib>=3.7
+reportlab>=4.0

@@ -1,0 +1,6 @@
+Isomer,CID,K,Aut,K_over_Aut,PEF,Status
+"Dibenzo[a,l]pyrene",9119,16,1,16.00,10.0,In primary dataset
+"Dibenzo[a,e]pyrene",9126,17,1,17.00,1.0,In primary dataset
+"Dibenzo[a,h]pyrene",9108,13,2,6.50,10.0,In primary dataset
+"Dibenzo[a,i]pyrene",9106,14,2,7.00,10.0,In primary dataset
+"Dibenzo[e,l]pyrene",9122,20,4,5.00,not assigned,Qualitative comparator only

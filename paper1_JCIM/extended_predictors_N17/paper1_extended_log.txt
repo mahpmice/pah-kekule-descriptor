@@ -1,0 +1,46 @@
+==============================================================================
+Paper 1 (JCIM) — N=17 extended-predictor audit (attack_list_v1 A3.4)
+==============================================================================
+
+Dataset: 27 PAH (paper1_table1.csv, v4).  Endpoint: log10PEF (rank).
+Descriptor definitions:
+  - Original 5 (K, |Aut|, K/|Aut|, Bay, K/|Aut|xBay): from canonical table.
+  - Group A (10): computed on pi-graph (methyl carbons excluded).
+  - Group B (2): XLogP3 and MolecularWeight from PubChem REST (whole molecule).
+
+Multiple-testing: Bonferroni alpha*/17 and Benjamini-Hochberg q<0.05.
+
+rank predictor             rho        raw_p       Bonf_p         BH_q   B  BH
+------------------------------------------------------------------------------
+   1 K_Aut_Bay          +0.834     6.68e-08     1.14e-06     1.14e-06   Y   Y
+   2 Bay                +0.802     4.83e-07     8.21e-06     4.11e-06   Y   Y
+   3 K_over_Aut         +0.745     8.38e-06     1.42e-04     4.75e-05   Y   Y
+   4 MW                 +0.690     6.79e-05     1.15e-03     2.51e-04   Y   Y
+   5 Aut                -0.688     7.38e-05     1.25e-03     2.51e-04   Y   Y
+   6 Balaban_J          -0.680     9.46e-05     1.61e-03     2.68e-04   Y   Y
+   7 Wiener_W           +0.645     2.79e-04     4.75e-03     6.79e-04   Y   Y
+   8 XLogP3             +0.625     4.90e-04     8.33e-03     1.04e-03   Y   Y
+   9 N_vertices         +0.575     1.69e-03     2.87e-02     3.19e-03   Y   Y
+  10 N_edges            +0.545     3.26e-03     5.53e-02     5.03e-03   .   Y
+  11 Zagreb_M1          +0.545     3.26e-03     5.53e-02     5.03e-03   .   Y
+  12 Randic_1chi        +0.511     6.46e-03     1.10e-01     9.16e-03   .   Y
+  13 Hosoya_Z           +0.490     9.53e-03     1.62e-01     1.18e-02   .   Y
+  14 Zagreb_M2          +0.488     9.75e-03     1.66e-01     1.18e-02   .   Y
+  15 N_rings            +0.470     1.33e-02     2.26e-01     1.51e-02   .   Y
+  16 K                  +0.420     2.91e-02     4.95e-01     3.09e-02   .   Y
+  17 lambda1            +0.280     1.57e-01     1.00e+00     1.57e-01   .   .
+
+--- diagnostic ---
+rho(K)             = +0.420
+rho(Hosoya Z)      = +0.490    (structural co-variation with K predicted)
+rho(K/|Aut|)       = +0.745
+rho(K/|Aut| x Bay) = +0.834
+--> Hosoya Z ranks >= K alone (expected: Z's last matching term IS K).
+--> K/|Aut| still outranks all pi-graph-only descriptors including Hosoya Z.
+--> K/|Aut|xBay remains the top predictor among 17 tested.
+
+Interpretation: if K/|Aut|(xBay) keeps rho-rank #1 among 17, the a-priori
+Bonferroni concern is dissolved --- drafting did not selectively pick a winner
+from a hidden predictor pool; instead an explicit N=17 sweep confirms rank.
+If another descriptor reaches comparable rho, the positioning shifts from
+'best predictor' to 'only mechanistically legible predictor' (see A5.3).

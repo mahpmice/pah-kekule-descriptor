@@ -21,9 +21,6 @@ from sklearn.metrics import roc_curve, roc_auc_score
 
 
 ROOT = Path(__file__).resolve().parent
-# Figures are written to the repo root by default
-FIG_OUT = ROOT.parent / "figures"
-FIG_OUT.mkdir(exist_ok=True)
 
 
 def load_module(path: Path, name: str):
@@ -34,8 +31,7 @@ def load_module(path: Path, name: str):
     return mod
 
 
-# Load statistical audit from same code/ directory
-audit = load_module(ROOT / "statistical_audit.py", "paper1_audit_mod")
+audit = load_module(ROOT / "paper1_audit.py", "paper1_audit_mod")
 
 plt.rcParams.update(
     {
@@ -100,8 +96,8 @@ def annotate_selected(ax, xs, ys, labels_offsets):
 
 
 def save(fig: plt.Figure, stem: str):
-    fig.savefig(FIG_OUT / f"{stem}.png", bbox_inches="tight")
-    fig.savefig(FIG_OUT / f"{stem}.pdf", bbox_inches="tight")
+    fig.savefig(ROOT / f"{stem}.png", bbox_inches="tight")
+    fig.savefig(ROOT / f"{stem}.pdf", bbox_inches="tight")
 
 
 def fig1_main_results():
