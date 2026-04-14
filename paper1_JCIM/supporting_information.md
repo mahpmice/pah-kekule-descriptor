@@ -49,7 +49,7 @@ The threshold was selected at the natural gap in the descriptor distribution (Ta
 ### Binary Summary
 
 - Threshold `K/|Aut| >= 5.0`
-- TP = 11, TN = 11, FP = 2, FN = 2
+- TP = 11, TN = 12, FP = 2, FN = 2 (sum = 27)
 - AUC = 0.95 (full dataset); AUC = 0.95 (EPA Priority PAHs only, n=14)
 
 ### Bootstrap 95% CI
