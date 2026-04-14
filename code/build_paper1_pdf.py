@@ -496,8 +496,9 @@ def parse_markdown(md_text: str, text_width: float) -> list:
         if line.strip().startswith("!["):
             if in_abstract:
                 flush_abstract()
-            # Extract alt text and path
-            m = re.match(r'!\[([^\]]*)\]\(([^)]+)\)', line.strip())
+            # Extract alt text and path. Greedy `.*` on alt to tolerate
+            # nested brackets like "benzo[a]pyrene" in captions.
+            m = re.match(r'!\[(.*)\]\(([^)]+)\)', line.strip())
             if m:
                 # Next non-empty line is the caption
                 caption = ""
@@ -546,7 +547,11 @@ def parse_markdown(md_text: str, text_width: float) -> list:
                 i_data = sep_idx + 1
 
             def parse_row(row_str):
-                cells = [c.strip() for c in row_str.split("|")]
+                # Handle escaped pipes (\|) before splitting on pipe delimiter.
+                # Markdown cells like `*K*/\|Aut\|` must not be split mid-cell.
+                _PIPE_PH = "\x00PIPE\x00"
+                row_str = row_str.replace("\\|", _PIPE_PH)
+                cells = [c.replace(_PIPE_PH, "|").strip() for c in row_str.split("|")]
                 # Remove empty first/last if pipe-delimited
                 if cells and not cells[0]:
                     cells = cells[1:]
