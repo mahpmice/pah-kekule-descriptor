@@ -22,7 +22,7 @@ paper1_canonical_data.py — Paper 1 (PAH Kekulé descriptor) 的 **唯一机器
 
 4. 新增 / 修改 PAH 条目只在本文件改。改动后下游重跑确认数字不漂移。
 
-Why this file exists: 2026-04-14 剧场窗口。上一窗口 methyl sensitivity 脚本
+Why this file exists (2026-04-14 refactor): a previous methyl sensitivity script
 从 CSV 解析 bay 字段，对 Benzo[c]phenanthrene 的 "Y¹"（上标脚注=Durant 1996
 MEF proxy 标记）做了 `== "Y"` 比较，得到 bay=0，导致 K/|Aut|×Bay 相关系数
 从 +0.834 掉到 +0.812。Debug 用了 8 个诊断脚本才定位到字符串解析。根本

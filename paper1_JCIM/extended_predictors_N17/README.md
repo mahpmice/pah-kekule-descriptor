@@ -1,6 +1,6 @@
 # Paper 1 (JCIM) — N=17 Extended-Predictor Audit
 
-**Purpose.** Stress-test the five pre-registered graph-algebraic invariants of the manuscript (K, |Aut(G)|, K/|Aut(G)|, bay-region indicator, K/|Aut(G)|×bay) against twelve additional descriptors under Bonferroni (×17) and Benjamini–Hochberg (q<0.05) corrections on the 27-PAH dataset. Runs in response to reviewer-style objection A3.4 in `paper1_JCIM/attack_list_v1.md` (post-hoc predictor-set declaration).
+**Purpose.** Stress-test the five pre-registered graph-algebraic invariants of the manuscript (K, |Aut(G)|, K/|Aut(G)|, bay-region indicator, K/|Aut(G)|×bay) against twelve additional descriptors under Bonferroni (×17) and Benjamini–Hochberg (q<0.05) corrections on the 27-PAH dataset. Provides a post-hoc multiplicity audit across an expanded 17-descriptor panel, declared explicitly in the manuscript §2.4.
 
 **Endpoint.** log₁₀ PEF (Collins 1998 + Durant 1996 + OEHHA, `data/paper1_table1.csv`).
 
@@ -20,7 +20,6 @@ Outputs are written to this directory (`paper1_JCIM/extended_predictors_N17/`):
 | `paper1_extended_per_pah.csv`  | 27 PAH × (name, CID, log₁₀PEF, 17 descriptor values) |
 | `paper1_extended_results.csv`  | 17 predictors × (ρ, raw p, Bonferroni p, BH q, survival flags) |
 | `paper1_extended_log.txt`      | Ranked summary with K-alone / Hosoya-Z diagnostic |
-| `README_中文解读.md`           | 中文详解 + manuscript §2.4 / §3.1 / §3.2 / §4.1 改动建议 |
 
 Network requirement: live HTTPS access to `https://pubchem.ncbi.nlm.nih.gov` for XLogP3 and MolecularWeight on each CID (Group B, 2 descriptors). The other 15 predictors need no network.
 
@@ -54,7 +53,7 @@ Seventeen predictors total.
 
 K/|Aut(G)| × Bay remains rank-1 among all 17 predictors at Spearman ρ = +0.834 (Bonferroni p × 17 = 1.14 × 10⁻⁶, BH q = 1.14 × 10⁻⁶). K/|Aut(G)| alone is rank-3 at ρ = +0.745 (Bonferroni p × 17 = 1.4 × 10⁻⁴). K alone drops out under Bonferroni × 17 (p = 0.495) — consistent with and strengthening the §3.1 argument that K is necessary but not sufficient without the symmetry quotient. Hosoya Z (ρ = +0.490) and whole-molecule comparators MW (ρ = +0.690) and XLogP3 (ρ = +0.625) remain below K/|Aut(G)|, supporting the mechanistic-legibility positioning of §4.1 rather than a generic-descriptor scaling argument.
 
-See `paper1_extended_log.txt` for the full ranked table and `README_中文解读.md` for proposed manuscript edits at §2.4, §3.1, §3.2, §4.1.
+See `paper1_extended_log.txt` for the full ranked table and ranked diagnostic.
 
 ## Reference
 

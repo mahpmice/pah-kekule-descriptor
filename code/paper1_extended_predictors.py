@@ -51,7 +51,7 @@ Run:
     # (execute from the repository root; outputs go to
     #  paper1_JCIM/extended_predictors_N17/)
 
-弦识 × 湛湛 | 2026-04-14 | attack_list_v1.md A3.4 response
+Zhiwei Liu | 2026-04-14 | extended N=17 predictor audit
 """
 from __future__ import annotations
 import json
@@ -383,7 +383,7 @@ def main():
     log_path = out_dir / "paper1_extended_log.txt"
     lines = []
     lines.append("=" * 78)
-    lines.append("Paper 1 (JCIM) — N=17 extended-predictor audit (attack_list_v1 A3.4)")
+    lines.append("Paper 1 (JCIM) — N=17 extended-predictor audit")
     lines.append("=" * 78)
     lines.append("")
     lines.append("Dataset: 27 PAH (paper1_table1.csv, v4).  Endpoint: log10PEF (rank).")

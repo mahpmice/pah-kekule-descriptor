@@ -2,7 +2,7 @@
 """
 paper1_methyl_sensitivity.py — Methylated-PAH exclusion sensitivity for Paper 1
 ===============================================================================
-Response to reviewer-style objection A3.6 in paper1_JCIM/attack_list_v1.md.
+Response to the methylated-PAH limitation discussed in §4.3 of the manuscript.
 
 §2.3 of the manuscript excludes exocyclic methyl substituents from the π-graph.
 A3.6 requires an honest accounting: if the three methylated PAHs in the dataset
@@ -27,7 +27,7 @@ Requirements: numpy, scipy, scikit-learn
 Run from repo root:
     python3 code/paper1_methyl_sensitivity.py
 
-弦识 × 湛湛 | 2026-04-14 | attack_list_v1.md A3.6 response
+Zhiwei Liu | 2026-04-14 | methyl-excluded subset sensitivity
 """
 from __future__ import annotations
 

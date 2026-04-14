@@ -8,7 +8,7 @@ Every number in the manuscript must trace back to this script.
 Requirements: numpy, scipy, scikit-learn
 Run: python paper1_audit.py
 
-弦识 × 湛湛 | 2026-04-04
+Zhiwei Liu | 2026-04-04
 """
 
 import numpy as np

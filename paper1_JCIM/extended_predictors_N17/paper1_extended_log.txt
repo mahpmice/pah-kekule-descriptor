@@ -1,5 +1,5 @@
 ==============================================================================
-Paper 1 (JCIM) — N=17 extended-predictor audit (attack_list_v1 A3.4)
+Paper 1 (JCIM) — N=17 extended-predictor audit
 ==============================================================================
 
 Dataset: 27 PAH (paper1_table1.csv, v4).  Endpoint: log10PEF (rank).

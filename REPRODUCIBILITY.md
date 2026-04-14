@@ -120,7 +120,7 @@ From `paper1_methyl_sensitivity.py` (N=24 methyl-excluded subset):
         ├── paper1_methyl_sensitivity.csv       5 predictors × (N=27 stats, N=24 stats, Δρ)
         ├── paper1_methyl_sensitivity_log.txt   methyl-excluded interpretation + §3.3 template
         ├── README.md                           English scope + reproduce block
-        └── README_中文解读.md                  中文详解 + manuscript edit plan
+        └── paper1_extended_log.txt          (ranked log; additional narrative available in source)
 ```
 
 ---

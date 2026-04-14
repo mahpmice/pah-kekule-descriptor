@@ -18,7 +18,7 @@ Code and data for **Liu Z. (2026). *Graph-algebraic invariants predict PAH carci
 | Hosoya *Z*                | +0.490     | 0.235               | 0.063       |
 | *K* alone                 | +0.420     | 0.495               | 0.115       |
 
-The graph-algebraic composite wins by a margin (Δρ = +0.144 over the strongest physicochemical comparator, MW). *K* alone is **not** significant under Bonferroni × 17 — the symmetry quotient |Aut(*G*)| is doing the work. See `paper1_JCIM/extended_predictors_N17/README_中文解读.md` for the full ranked table and methodological discussion.
+The graph-algebraic composite wins by a margin (Δρ = +0.144 over the strongest physicochemical comparator, MW). *K* alone is **not** significant under Bonferroni × 17 — the symmetry quotient |Aut(*G*)| is doing the work. See `paper1_JCIM/extended_predictors_N17/README.md` and `paper1_extended_log.txt` for the full ranked table and methodological discussion.
 
 ## Reproduce in three commands
 
